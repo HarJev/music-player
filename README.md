@@ -4,7 +4,7 @@ This is a personal project that I hope goes well enought to be a thing in the fu
 
 ### Front End (React)
 
-This is the front end aspect of the project. It was written using Facebook's React Javascrips library.
+This is the front end aspect of the project. It was written using Facebook's React Javascript library.
 
 ### Back End (TBD)
 
