@@ -2,7 +2,7 @@
 
 This is a personal project that I hope goes well enough to be a thing in the future.
 
-### Front End (React)
+### Front End ([React](https://reactjs.org/))
 
 This is the front end aspect of the project. It was written using Facebook's React Javascript library.
 
