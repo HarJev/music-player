@@ -1,6 +1,6 @@
 ## Music Player / Streaming Service
 
-This is a personal project that I hope goes well enought to be a thing in the future.
+This is a personal project that I hope goes well enough to be a thing in the future.
 
 ### Front End (React)
 
