@@ -4,6 +4,10 @@
   opacity: 0.91;
   backdrop-filter: blur(11.1px);
   background-image: linear-gradient(to top, #010b1e, #020b1c 100%);
+  overflow: auto;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  overscroll-behavior: contain;
 }
 
 .sb_circle_navs {
@@ -64,6 +68,7 @@
   border-radius: 22.5px;
   background-image: linear-gradient(to left, #1ed761, #1e64d7);
   cursor: pointer;
+  transition: 0.5s;
 }
 
 .sb_madeForYou_text {
@@ -74,38 +79,39 @@
   color: #212020;
 }
 
-.sb_quickAccess {
+.sb_section {
   margin-top: 11px;
   display: flex;
   flex-direction: column;
+  cursor: default;
 }
 
-.sb_quickAccess_nav_indicator {
+.sb_section_nav_indicator {
   margin-left: 0px;
   width: 6px;
   height: 28px;
 }
 
-.sb_quickAccess_text {
+.sb_sectionHeader {
   font-size: 18px;
   line-height: 2.17;
   color: #3b4c64;
   margin-left: 50px;
 }
 
-.sb_quickAccess_nav {
+.sb_section_nav {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  padding-top: 16px;
-  cursor: default;
+  padding-top: 8px;
+  font-family: 'Raleway', sans-serif;
 }
 
-.sb_quickAccess_nav_icon {
+.sb_section_nav_icon {
   margin-left: 44px;
 }
 
-.sb_quickAccess_nav_text {
+.sb_section_nav_text {
   padding-left: 21px;
 
   opacity: 0.5;
@@ -115,10 +121,51 @@
   color: #ffffff;
 }
 
-.sb_quickAccess_nav:hover .sb_quickAccess_nav_indicator {
+.sb_section_nav:hover .sb_section_nav_indicator {
   background-color: #2763bb;
 }
 
-.sb_quickAccess_nav:hover .sb_quickAccess_nav_text {
+.sb_section_nav:hover .sb_section_nav_text {
   opacity: 1;
+}
+
+.sb_divider {
+  width: 203px;
+  height: 1px;
+  opacity: 0.5;
+  background-color: #3b4c64;
+  border: 0;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.sb_addPlaylist {
+  width: inherit;
+  display: flex;
+  justify-content: center;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+.sb_addPlayList_input {
+  background: transparent;
+  width: 258.8px;
+  height: 45px;
+  border-radius: 22.5px;
+  border: solid 1px #3b4c64;
+  padding-left: 22px;
+  font-size: 14px;
+  letter-spacing: 0.06px;
+  color: #597193;
+}
+
+.sb_addPlayList_input::placeholder {
+  color: #597193;
+}
+
+.sb_addPlayList_input:focus {
+  outline: 0px !important;
+  -webkit-appearance: none;
+  box-shadow: none !important;
+  border: solid 1px #ffffff;
 }
