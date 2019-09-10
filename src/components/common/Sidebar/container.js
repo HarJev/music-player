@@ -1,8 +1,13 @@
 import React, { Component } from 'react';
+import { SidebarView } from './View';
 
 export class Container extends Component {
   render() {
-    return <div></div>;
+    return (
+      <div>
+        <SidebarView />
+      </div>
+    );
   }
 }
 
