@@ -43,9 +43,12 @@
 .c_bottom {
   width: inherit;
   height: 96px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
 .c_songData {
+  grid-column: 1 / span 1;
   padding-left: 25px;
   display: flex;
   height: 96px;
@@ -62,6 +65,7 @@
 .c_textData {
   padding-left: 15px;
   height: 40px;
+  width: 180px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -83,4 +87,31 @@
   line-height: 1.17;
   text-align: left;
   color: #787878;
+}
+
+.c_playbackControls_div {
+  grid-column: 2 / span 1;
+  height: 96px;
+  display: flex;
+  justify-content: center;
+  width: inherit;
+}
+
+.c_playbackControls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 300px;
+}
+
+.c_otherIcon {
+  width: 30px !important;
+  height: 30px !important;
+  color: #b3b3b3;
+}
+
+.c_PausePlayIcon {
+  width: 60px !important;
+  height: 60px !important;
+  color: #b3b3b3;
 }
