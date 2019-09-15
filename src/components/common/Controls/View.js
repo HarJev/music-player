@@ -15,7 +15,7 @@ export const ControlsView = () => (
     <div className="c_left">
       <div className="c_musicProgress">
         <div className="c_tempProgress" />
-        <div className="c_tempProgressEnd" />
+        {/* <div className="c_tempProgressEnd" /> */}
       </div>
       <div className="c_bottom">
         <div className="c_songData">
