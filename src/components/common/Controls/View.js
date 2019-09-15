@@ -30,8 +30,8 @@ export const ControlsView = () => (
         </div>
         <div className="c_playbackControls_div">
           <div className="c_playbackControls">
-            <div className="c_otherIcon">
-              <ShuffleIcon className="c_otherIcon" />
+            <div className="c_outsideIcon">
+              <ShuffleIcon className="c_outsideIcon" />
             </div>
             <div className="c_otherIcon">
               <SkipPreviousIcon className="c_otherIcon" />
@@ -42,8 +42,8 @@ export const ControlsView = () => (
             <div className="c_otherIcon">
               <SkipNextIcon className="c_otherIcon" />
             </div>
-            <div className="c_otherIcon">
-              <LoopIcon className="c_otherIcon" />
+            <div className="c_outsideIcon">
+              <LoopIcon className="c_outsideIcon" />
             </div>
           </div>
         </div>
