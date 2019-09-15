@@ -1,0 +1,86 @@
+.c_box {
+  display: grid;
+  grid-template-columns: 1fr 302px;
+
+  opacity: 0.98;
+  -webkit-backdrop-filter: blur(49.9px);
+  backdrop-filter: blur(49.9px);
+  background-image: linear-gradient(to top, #020814, #030d20);
+  width: inherit;
+  height: 101px;
+}
+
+.c_right {
+  grid-column: 2 / span 1;
+}
+
+.c_tempProgress {
+  width: 25%;
+  border-radius: 2px;
+  background-image: linear-gradient(to left, #1ed761, #1e64d7);
+}
+
+.c_tempProgressEnd {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: #ffffff;
+}
+
+.c_left {
+  grid-column: 1 / span 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.c_musicProgress {
+  width: inherit;
+  height: 5px;
+  background-color: #747474;
+  display: flex;
+}
+
+.c_bottom {
+  width: inherit;
+  height: 96px;
+}
+
+.c_songData {
+  padding-left: 25px;
+  display: flex;
+  height: 96px;
+  align-items: center;
+}
+
+.c_albumArt {
+  width: 70px;
+  height: 70px;
+  background-image: url('../../../assets/graduation.jpg');
+  background-size: 70px 70px;
+}
+
+.c_textData {
+  padding-left: 15px;
+  height: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.c_songName {
+  font-family: Raleway;
+  font-size: 15.4px;
+  font-weight: 600;
+  line-height: 1.17;
+  text-align: left;
+  color: #ababab;
+}
+
+.c_artist {
+  font-family: Raleway;
+  font-size: 12.8px;
+  font-weight: 600;
+  line-height: 1.17;
+  text-align: left;
+  color: #787878;
+}
