@@ -1,0 +1,170 @@
+.c_box {
+  display: grid;
+  grid-template-columns: 1fr 302px;
+
+  opacity: 0.98;
+  -webkit-backdrop-filter: blur(49.9px);
+  backdrop-filter: blur(49.9px);
+  background-image: linear-gradient(to top, #020814, #030d20);
+  width: inherit;
+  height: 101px;
+}
+
+.c_right {
+  grid-column: 2 / span 1;
+}
+
+.c_tempProgressEnd {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: #ffffff;
+}
+
+.c_left {
+  grid-column: 1 / span 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.c_musicProgress {
+  width: inherit;
+  height: 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.c_emptyProgress {
+  width: 100%;
+  height: 5px;
+  background-color: #747474;
+  display: flex;
+}
+
+.c_tempProgress {
+  width: 25%;
+  border-radius: 2px;
+  background-image: linear-gradient(to left, #1ed761, #1e64d7);
+}
+
+.c_time {
+  width: 100%;
+  height: 14px;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 10px;
+  padding-right: 10px;
+
+  font-family: Raleway;
+  font-size: 12.8px;
+  font-weight: 600;
+  line-height: 1.17;
+  text-align: left;
+  color: #787878;
+  cursor: default;
+}
+
+.c_bottom {
+  width: inherit;
+  height: 79px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.c_songData {
+  grid-column: 1 / span 1;
+  padding-left: 25px;
+  display: flex;
+  height: 79px;
+  align-items: center;
+}
+
+.c_albumArt {
+  width: 62px;
+  height: 62px;
+  background-image: url('../../../assets/graduation.jpg');
+  background-size: 70px 70px;
+}
+
+.c_textData {
+  padding-left: 15px;
+  height: 40px;
+  width: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.c_songName {
+  font-family: Raleway;
+  font-size: 15.4px;
+  font-weight: 600;
+  line-height: 1.17;
+  text-align: left;
+  color: #ababab;
+}
+
+.c_artist {
+  font-family: Raleway;
+  font-size: 12.8px;
+  font-weight: 600;
+  line-height: 1.17;
+  text-align: left;
+  color: #787878;
+}
+
+.c_playbackControls_div {
+  grid-column: 2 / span 1;
+  height: 79px;
+  display: flex;
+  justify-content: center;
+  width: inherit;
+}
+
+.c_playbackControls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 300px;
+}
+
+.c_otherIcon {
+  width: 30px !important;
+  height: 30px !important;
+  color: #b3b3b3;
+}
+
+.c_PausePlayIcon {
+  width: 60px !important;
+  height: 60px !important;
+  color: #b3b3b3;
+}
+
+.c_outsideIcon {
+  width: 30px !important;
+  height: 30px !important;
+  color: #565656;
+}
+
+.c_otherOptions {
+  grid-column: 3 / span 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 4px;
+}
+
+.c_volumeControl {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 142px;
+}
+
+.c_volumeBar {
+  width: 102px;
+  height: 4px;
+  background-color: #b3b3b3;
+  border-radius: 2px;
+}

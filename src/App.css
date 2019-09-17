@@ -1,0 +1,41 @@
+.App {
+  display: grid;
+  grid-template-columns: 302px 1fr;
+}
+
+.Right_sidebar {
+  grid-column: 1 / span 1;
+}
+
+.Main {
+  grid-column: 2 / span 1;
+}
+
+.Main {
+  display: grid;
+  grid-template-rows: 1fr 101px;
+}
+
+.Main_top {
+  grid-row: 1 / span 1;
+  display: grid;
+  grid-template-columns: 1fr 302px;
+}
+
+.Main_app {
+  grid-column: 1 / span 1;
+
+  background-image: linear-gradient(to bottom, #000c1d, #08152d);
+}
+
+.Right_sidebar {
+  grid-column: 2 / span 1;
+
+  opacity: 0.91;
+  backdrop-filter: blur(11.1px);
+  background-image: linear-gradient(to top, #010b1e, #020b1c 100%);
+}
+
+.controls {
+  grid-row: 2 / span 1;
+}
