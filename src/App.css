@@ -30,10 +30,6 @@
 
 .Right_sidebar {
   grid-column: 2 / span 1;
-
-  opacity: 0.91;
-  backdrop-filter: blur(11.1px);
-  background-image: linear-gradient(to top, #010b1e, #020b1c 100%);
 }
 
 .controls {

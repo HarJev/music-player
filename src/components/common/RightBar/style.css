@@ -1,0 +1,42 @@
+.rb_box {
+  height: inherit;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px 10px;
+
+  opacity: 0.91;
+  backdrop-filter: blur(11.1px);
+  background-image: linear-gradient(to top, #010b1e, #020b1c 100%);
+}
+
+.rb_top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  height: 60px;
+}
+
+.rb_userName {
+  font-family: 'Raleway', sans-serif;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 1.18;
+  letter-spacing: 0.3px;
+  color: #afafaf;
+}
+
+.rb_profilePicture {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center center;
+}
+
+.rb_options {
+  width: 15px;
+  height: 9px;
+  color: #e1e1e1;
+}

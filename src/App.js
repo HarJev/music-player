@@ -5,6 +5,7 @@ import { SideBar } from './components/common/Sidebar';
 
 import './App.css';
 import Controls from './components/common/Controls/container';
+import Rightbar from './components/common/RightBar/container';
 
 class App extends React.Component {
   render() {
@@ -18,7 +19,7 @@ class App extends React.Component {
         <div className="Main">
           <div className="Main_top">
             <div className="Main_app"></div>
-            <div className="Right_sidebar"></div>
+            <Rightbar className="Right_sidebar" />
           </div>
           <Controls className="controls" />
         </div>
