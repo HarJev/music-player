@@ -121,3 +121,25 @@
   height: 30px !important;
   color: #565656;
 }
+
+.c_otherOptions {
+  grid-column: 3 / span 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 4px;
+}
+
+.c_volumeControl {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 142px;
+}
+
+.c_volumeBar {
+  width: 102px;
+  height: 4px;
+  background-color: #b3b3b3;
+  border-radius: 2px;
+}
