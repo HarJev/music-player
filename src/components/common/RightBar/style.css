@@ -14,6 +14,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  cursor: default;
 
   height: 60px;
 }
@@ -39,4 +40,67 @@
   width: 15px;
   height: 9px;
   color: #e1e1e1;
+}
+
+.rb_middle {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 120px;
+  cursor: default;
+}
+
+.rb_friendActivity {
+  font-family: Raleway;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.14;
+  letter-spacing: 1.63px;
+  text-align: left;
+  color: #3b4c64;
+  text-transform: uppercase;
+}
+
+.rb_friendsMessage {
+  width: 234px;
+  font-family: Raleway;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 1.18;
+  letter-spacing: 0.3px;
+  text-align: center;
+  color: #afafaf;
+}
+
+.rb_upgrade {
+  width: 258.8px;
+  height: 45px;
+  border-radius: 22.5px;
+  background-image: linear-gradient(to left, #1ed761, #1e64d7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.rb_upgrade_text {
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 1.38;
+  letter-spacing: 0.06px;
+  text-align: center;
+  color: #212020;
+  text-transform: uppercase;
+}
+
+.rb_end {
+  display: flex;
+  justify-content: center;
+}
+
+.rb_logo {
+  height: 90px;
+  width: 280px;
+  object-fit: cover;
+  object-position: center center;
 }
