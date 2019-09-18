@@ -21,9 +21,7 @@ export const RightbarView = () => (
         <span className="rb_upgrade_text">upgrade</span>
       </div>
     </div>
-    <div className="rb_end">
-      <img src={logo} alt="logo" className="rb_logo" />
-    </div>
+    <div className="rb_end"></div>
   </div>
 );
 

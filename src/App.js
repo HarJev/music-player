@@ -1,14 +1,20 @@
+import { hot } from 'react-hot-loader/root';
 import React from 'react';
 import { Switch, Route, withRouter } from 'react-router-dom';
 import { LandingPage } from './components/pages/LandingPage';
 import { SideBar } from './components/common/Sidebar';
+import UserDatabase from './assets/stubs/profile.json';
 
 import './App.css';
 import Controls from './components/common/Controls/container';
 import Rightbar from './components/common/RightBar/container';
 
 class App extends React.Component {
+  state = {
+    user: { ...UserDatabase },
+  };
   render() {
+    console.log(this.state.user);
     return (
       <div className="App">
         <SideBar className="Right_sidebar" />
@@ -28,4 +34,4 @@ class App extends React.Component {
   }
 }
 
-export default withRouter(App);
+export default hot(withRouter(App));
