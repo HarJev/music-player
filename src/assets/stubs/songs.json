@@ -1,0 +1,104 @@
+{
+  "songs": [
+    {
+      "id": "1",
+      "title": "Stronger",
+      "artist": ["Kanye West"],
+      "feat": [],
+      "album": "Graduation",
+      "length": 311,
+      "albumArt": "/src/assets/graduation.jpg",
+      "track": ""
+    },
+    {
+      "id": "2",
+      "title": "Flashing Lights",
+      "artist": "Kanye West",
+      "feat": ["Dwele"],
+      "album": "Graduation",
+      "length": 237,
+      "albumArt": "/src/assets/graduation.jpg",
+      "track": ""
+    },
+    {
+      "id": "3",
+      "title": "Heaven's Gate (feat. Lily Allen)",
+      "artist": "Burna Boy",
+      "feat": ["Lily Allen"],
+      "album": "Outside",
+      "length": 202,
+      "albumArt": "/src/assets/outside.jpg",
+      "track": ""
+    },
+    {
+      "id": "4",
+      "title": "No Guidance (feat. Drake)",
+      "artist": "Chris Brown",
+      "feat": ["Drake"],
+      "album": "Indigo",
+      "length": 260,
+      "albumArt": "/src/assets/indigo.jpg",
+      "track": ""
+    },
+    {
+      "id": "5",
+      "title": "Royalty (feat. Kymani Marley, Stefflon Don & Vybz Kartel)",
+      "artist": "XXXTENTACION",
+      "feat": ["Ky-Mani Marley", "Stefflon Don", "Vybz Kartel"],
+      "album": "Single",
+      "length": 203,
+      "albumArt": "/src/assets/royalty.jpg",
+      "track": ""
+    },
+    {
+      "id": "6",
+      "title": "One Way",
+      "artist": "Vybz Kartel",
+      "feat": [],
+      "album": "Single",
+      "length": 196,
+      "albumArt": "/src/assets/oneway.jpg",
+      "track": ""
+    },
+    {
+      "id": "7",
+      "title": "Bro Bro",
+      "artist": "Ding Dong",
+      "feat": [],
+      "album": "Single",
+      "length": 196,
+      "albumArt": "/src/assets/brobro.jpg",
+      "track": ""
+    },
+    {
+      "id": "8",
+      "title": "Weh Yuh Did Deh",
+      "artist": "Alkaline",
+      "feat": [],
+      "album": "Single",
+      "length": 206,
+      "albumArt": "/src/assets/wehyuhdiddeh.jpg",
+      "track": ""
+    },
+    {
+      "id": "9",
+      "title": "Halftime",
+      "artist": "Young Thug",
+      "feat": [],
+      "album": "Barter 6",
+      "length": 226,
+      "albumArt": "/src/assets/barter6.jpg",
+      "track": ""
+    },
+    {
+      "id": "10",
+      "title": "Teenage Fever",
+      "artist": "Drake",
+      "feat": [],
+      "album": "More Life",
+      "length": 219,
+      "albumArt": "/src/assets/morelife.jpg",
+      "track": ""
+    }
+  ]
+}
