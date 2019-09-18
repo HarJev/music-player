@@ -1,0 +1,77 @@
+.home_box {
+  width: inherit;
+  height: inherit;
+  cursor: default;
+}
+
+.title {
+  margin-top: 40px;
+  font-size: 46.6px;
+  font-weight: bold;
+  line-height: 1.37;
+  letter-spacing: 0.19px;
+  text-align: left;
+  color: #eeeeee;
+}
+
+.category_header_section {
+  display: flex;
+  flex-direction: column;
+  width: inherit;
+  margin-top: 20px;
+}
+
+.category_header {
+  height: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.Home_scroll_left_right {
+  display: flex;
+
+  color: #e1e1e1;
+}
+
+.category_header span {
+  font-size: 17.6px;
+  letter-spacing: 0.07px;
+  text-align: left;
+  color: #d6d6d6;
+}
+
+.category_divider {
+  width: inherit;
+  height: 1px;
+  background-color: #3b4c64;
+}
+
+.home_recentlyPlayedList {
+  display: flex;
+}
+
+.recentylPlayed_item {
+  height: 360px;
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+}
+
+.recentlyPlayed_art {
+  width: 223px;
+  height: 223px;
+  object-fit: contain;
+  border-radius: 20px;
+}
+
+.recentlyPlayed_title {
+  margin-top: 6px;
+  font-size: 16px;
+  color: #eeeeee;
+}
+
+.recentlyPlayed_artist {
+  margin-top: 6px;
+  font-size: 13px;
+  color: #787878;
+}

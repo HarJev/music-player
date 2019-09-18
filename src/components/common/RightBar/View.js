@@ -5,11 +5,11 @@ import logo from '../../../assets/cover.png';
 
 import './style.css';
 
-export const RightbarView = () => (
+export const RightbarView = props => (
   <div className="rb_box">
     <div className="rb_top">
       <img src={profilePhoto} alt="profile" className="rb_profilePicture" />
-      <div className="rb_userName">Jevaun Harris</div>
+      <div className="rb_userName">{props.name}</div>
       <KeyboardArrowDownIcon className="rb_options" />
     </div>
     <div className="rb_middle">
