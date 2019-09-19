@@ -1,6 +1,6 @@
 import React from 'react';
 import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
-import profilePhoto from '../../../assets/profile_picture.png';
+import profilePhoto from 'assets/profile_picture.png';
 import logo from '../../../assets/cover.png';
 
 import './style.css';

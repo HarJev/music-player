@@ -28,7 +28,7 @@ export const Home = props => (
         props.user.recentlyPlayed.includes(song.id) ? (
           <div className="recentylPlayed_item">
             <img
-              src={song.albumArt}
+              src={require(`assets/${song.albumArt}`)}
               alt={song.title}
               className="recentlyPlayed_art"
             />

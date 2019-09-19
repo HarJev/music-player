@@ -7,7 +7,7 @@
       "feat": [],
       "album": "Graduation",
       "length": 311,
-      "albumArt": "/src/assets/graduation.jpg",
+      "albumArt": "graduation.jpg",
       "track": ""
     },
     {
@@ -17,7 +17,7 @@
       "feat": ["Dwele"],
       "album": "Graduation",
       "length": 237,
-      "albumArt": "/src/assets/graduation.jpg",
+      "albumArt": "graduation.jpg",
       "track": ""
     },
     {
@@ -27,7 +27,7 @@
       "feat": ["Lily Allen"],
       "album": "Outside",
       "length": 202,
-      "albumArt": "/src/assets/outside.jpg",
+      "albumArt": "outside.jpg",
       "track": ""
     },
     {
@@ -37,7 +37,7 @@
       "feat": ["Drake"],
       "album": "Indigo",
       "length": 260,
-      "albumArt": "/src/assets/indigo.jpg",
+      "albumArt": "indigo.jpg",
       "track": ""
     },
     {
@@ -47,7 +47,7 @@
       "feat": ["Ky-Mani Marley", "Stefflon Don", "Vybz Kartel"],
       "album": "Single",
       "length": 203,
-      "albumArt": "/src/assets/royalty.jpg",
+      "albumArt": "royalty.jpg",
       "track": ""
     },
     {
@@ -57,7 +57,7 @@
       "feat": [],
       "album": "Single",
       "length": 196,
-      "albumArt": "/src/assets/oneway.jpg",
+      "albumArt": "oneway.jpg",
       "track": ""
     },
     {
@@ -67,7 +67,7 @@
       "feat": [],
       "album": "Single",
       "length": 196,
-      "albumArt": "/src/assets/brobro.jpg",
+      "albumArt": "brobro.jpg",
       "track": ""
     },
     {
@@ -77,7 +77,7 @@
       "feat": [],
       "album": "Single",
       "length": 206,
-      "albumArt": "/src/assets/wehyuhdiddeh.jpg",
+      "albumArt": "wehyuhdiddeh.jpg",
       "track": ""
     },
     {
@@ -87,7 +87,7 @@
       "feat": [],
       "album": "Barter 6",
       "length": 226,
-      "albumArt": "/src/assets/barter6.jpg",
+      "albumArt": "barter6.jpg",
       "track": ""
     },
     {
@@ -97,7 +97,7 @@
       "feat": [],
       "album": "More Life",
       "length": 219,
-      "albumArt": "/src/assets/morelife.jpg",
+      "albumArt": "morelife.jpg",
       "track": ""
     }
   ]
