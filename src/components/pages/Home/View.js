@@ -1,6 +1,7 @@
 import React from 'react';
 import KeyboardArrowLeftIcon from '@material-ui/icons/KeyboardArrowLeft';
 import KeyboardArrowRightIcon from '@material-ui/icons/KeyboardArrowRight';
+import PlayCircleOutlineIcon from '@material-ui/icons/PlayCircleOutline';
 
 import './style.css';
 
@@ -27,11 +28,16 @@ export const Home = props => (
       {props.music.songs.map(song =>
         props.user.recentlyPlayed.includes(song.id) ? (
           <div className="recentylPlayed_item">
-            <img
-              src={require(`assets/${song.albumArt}`)}
-              alt={song.title}
-              className="recentlyPlayed_art"
-            />
+            <div className="recentlyPlayed_art_play">
+              <img
+                src={require(`assets/${song.albumArt}`)}
+                alt={song.title}
+                className="recentlyPlayed_art"
+              />
+              <div className="recentlyPlayed_play">
+                <PlayCircleOutlineIcon className="c_PausePlayIcon" />
+              </div>
+            </div>
             <div className="recentlyPlayed_title">{song.title}</div>
             <div className="recentlyPlayed_artist">{song.artist}</div>
           </div>

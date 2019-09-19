@@ -48,13 +48,18 @@
 
 .home_recentlyPlayedList {
   display: flex;
+  margin-top: 20px;
 }
 
 .recentylPlayed_item {
-  height: 360px;
+  height: 280px;
   width: 250px;
   display: flex;
   flex-direction: column;
+}
+
+.recentlyPlayed_art_play {
+  position: relative;
 }
 
 .recentlyPlayed_art {
@@ -62,6 +67,25 @@
   height: 223px;
   object-fit: contain;
   border-radius: 20px;
+}
+
+.recentlyPlayed_play {
+  width: 223px;
+  height: 223px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  /* z-index: -1; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  background-color: rgba(0, 0, 0, 0.6);
+  visibility: hidden;
+}
+
+.recentlyPlayed_art_play:hover > .recentlyPlayed_play {
+  visibility: visible;
 }
 
 .recentlyPlayed_title {
