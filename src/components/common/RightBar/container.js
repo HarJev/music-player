@@ -3,7 +3,7 @@ import { RightbarView } from './View';
 
 export class Container extends Component {
   render() {
-    return <RightbarView />;
+    return <RightbarView name={this.props.name} />;
   }
 }
 

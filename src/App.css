@@ -24,8 +24,6 @@
 
 .Main_app {
   grid-column: 1 / span 1;
-
-  background-image: linear-gradient(to bottom, #000c1d, #08152d);
 }
 
 .Right_sidebar {

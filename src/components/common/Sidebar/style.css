@@ -109,6 +109,7 @@
 
 .sb_section_nav_icon {
   margin-left: 44px;
+  color: #565656;
 }
 
 .sb_section_nav_text {
@@ -125,8 +126,25 @@
   background-color: #2763bb;
 }
 
+.sb_section_nav_indicator_active {
+  background-color: #2763bb;
+  margin-left: 0px;
+  width: 6px;
+  height: 28px;
+}
+
 .sb_section_nav:hover .sb_section_nav_text {
   opacity: 1;
+}
+
+.sb_section_nav_text_active {
+  padding-left: 21px;
+
+  opacity: 1;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 2.17;
+  color: #ffffff;
 }
 
 .sb_divider {

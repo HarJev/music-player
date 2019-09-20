@@ -11,11 +11,12 @@ import PlaceIcon from '../../../assets/place.png';
 import PerfectScrollbar from 'react-perfect-scrollbar';
 import InputAdornment from '@material-ui/core/InputAdornment';
 import TextField from '@material-ui/core/TextField';
+import { Link, BrowserRouter as Router } from 'react-router-dom';
 import 'react-perfect-scrollbar/dist/css/styles.css';
 
 import './style.css';
 
-export const SidebarView = () => (
+export const SidebarView = props => (
   <div className="sb_box">
     <PerfectScrollbar>
       <div className="sb_circle_navs">
@@ -48,11 +49,29 @@ export const SidebarView = () => (
       <div className="sb_section">
         <div className="sb_sectionHeader">Quick Access</div>
         <div className="sb_section_navs">
-          <div className="sb_section_nav">
-            <div className="sb_section_nav_indicator"></div>
+          <div
+            className="sb_section_nav"
+            onClick={() => props.handlePageChange('home')}
+          >
+            <div
+              className={
+                props.activePage === 'home'
+                  ? 'sb_section_nav_indicator_active'
+                  : 'sb_section_nav_indicator'
+              }
+            ></div>
             <HomeIcon className="sb_section_nav_icon" />
-            <span className="sb_section_nav_text">Home</span>
+            <span
+              className={
+                props.activePage === 'home'
+                  ? 'sb_section_nav_text_active'
+                  : 'sb_section_nav_text'
+              }
+            >
+              Home
+            </span>
           </div>
+
           <div className="sb_section_nav">
             <div className="sb_section_nav_indicator"></div>
             <ExploreOutlinedIcon className="sb_section_nav_icon" />
