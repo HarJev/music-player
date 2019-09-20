@@ -2,103 +2,103 @@
   "songs": [
     {
       "id": "1",
-      "title": "Stronger",
-      "artist": ["Kanye West"],
-      "feat": [],
-      "album": "Graduation",
-      "length": 311,
-      "albumArt": "graduation.jpg",
-      "track": ""
+      "title": "Drip Too Hard",
+      "artist": "Lil Baby",
+      "feat": ["Gunna"],
+      "album": "Single",
+      "length": 145,
+      "albumArt": "driptoohard.jpg",
+      "track": "driptoohard.mp3"
     },
     {
       "id": "2",
-      "title": "Flashing Lights",
-      "artist": "Kanye West",
-      "feat": ["Dwele"],
-      "album": "Graduation",
-      "length": 237,
-      "albumArt": "graduation.jpg",
-      "track": ""
+      "title": "Get You (feat. Kali Uchis)",
+      "artist": "Daniel Caesar",
+      "feat": ["Kali Uchis"],
+      "album": "Freudian",
+      "length": 278,
+      "albumArt": "freudian.jpg",
+      "track": "getyou.mp3"
     },
     {
       "id": "3",
-      "title": "Heaven's Gate (feat. Lily Allen)",
-      "artist": "Burna Boy",
-      "feat": ["Lily Allen"],
-      "album": "Outside",
-      "length": 202,
-      "albumArt": "outside.jpg",
-      "track": ""
+      "title": "Going Bad (feat. Drake)",
+      "artist": "Meek Mill",
+      "feat": ["Drake"],
+      "album": "Championships",
+      "length": 180,
+      "albumArt": "championships.jpg",
+      "track": "goingbad.mp3"
     },
     {
       "id": "4",
-      "title": "No Guidance (feat. Drake)",
-      "artist": "Chris Brown",
-      "feat": ["Drake"],
-      "album": "Indigo",
-      "length": 260,
-      "albumArt": "indigo.jpg",
-      "track": ""
+      "title": "Kevin's Heart",
+      "artist": "J. Cole",
+      "feat": [],
+      "album": "K.O.D.",
+      "length": 200,
+      "albumArt": "kod.jpg",
+      "track": "kevinsheart.mp3"
     },
     {
       "id": "5",
-      "title": "Royalty (feat. Kymani Marley, Stefflon Don & Vybz Kartel)",
-      "artist": "XXXTENTACION",
-      "feat": ["Ky-Mani Marley", "Stefflon Don", "Vybz Kartel"],
-      "album": "Single",
-      "length": 203,
-      "albumArt": "royalty.jpg",
-      "track": ""
+      "title": "Look Back At It",
+      "artist": "A Boogie Wit da Hoodie",
+      "feat": [],
+      "album": "Hoodie SZN",
+      "length": 179,
+      "albumArt": "hoodieszn.jpg",
+      "track": "lookbackatit.mp3"
     },
     {
       "id": "6",
-      "title": "One Way",
-      "artist": "Vybz Kartel",
+      "title": "Middle Child",
+      "artist": "J. Cole",
       "feat": [],
       "album": "Single",
-      "length": 196,
-      "albumArt": "oneway.jpg",
-      "track": ""
+      "length": 213,
+      "albumArt": "middlechild.jpg",
+      "track": "middlechild.mp3"
     },
     {
       "id": "7",
-      "title": "Bro Bro",
-      "artist": "Ding Dong",
+      "title": "Sanguine Paradise",
+      "artist": "Lil Uzi Vert",
       "feat": [],
       "album": "Single",
-      "length": 196,
-      "albumArt": "brobro.jpg",
-      "track": ""
+      "length": 244,
+      "albumArt": "sanguineparadise.jpg",
+      "track": "sanguineparadise.mp3"
     },
     {
       "id": "8",
-      "title": "Weh Yuh Did Deh",
-      "artist": "Alkaline",
-      "feat": [],
-      "album": "Single",
-      "length": 206,
-      "albumArt": "wehyuhdiddeh.jpg",
-      "track": ""
+      "title": "STOOPID",
+      "artist": "6ix9ine",
+      "feat": ["Bobby Shmurda"],
+      "album": "DUMMY BOY",
+      "length": 212,
+      "albumArt": "dummyboy.jpg",
+      "track": "stoopid.mp3"
     },
     {
       "id": "9",
-      "title": "Halftime",
-      "artist": "Young Thug",
-      "feat": [],
-      "album": "Barter 6",
-      "length": 226,
-      "albumArt": "barter6.jpg",
-      "track": ""
+      "title": "Sunflower",
+      "artist": "Post Malone",
+      "feat": ["Swae Lee"],
+      "album": "Single",
+      "length": 218,
+      "albumArt": "sunflower.jpg",
+      "track": "sunflower.mp3"
     },
     {
       "id": "10",
-      "title": "Teenage Fever",
-      "artist": "Drake",
-      "feat": [],
-      "album": "More Life",
-      "length": 219,
-      "albumArt": "morelife.jpg",
-      "track": ""
+      "title": "Unicorn Purp",
+      "artist": "Future",
+      "feat": ["Young Thug", "Gunna"],
+      "album": "The Wizrd",
+      "length": 246,
+      "albumArt": "thewizrd.jpg",
+      "track": "unicornpurp.mp3"
     }
   ]
 }

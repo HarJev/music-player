@@ -52,7 +52,7 @@
 }
 
 .recentylPlayed_item {
-  height: 280px;
+  height: 310px;
   width: 250px;
   display: flex;
   flex-direction: column;
@@ -98,4 +98,9 @@
   margin-top: 6px;
   font-size: 13px;
   color: #787878;
+}
+
+.recentlyPlayed_title:hover,
+.recentlyPlayed_artist:hover {
+  text-decoration: underline;
 }

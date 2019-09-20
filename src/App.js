@@ -15,11 +15,22 @@ class App extends React.Component {
   state = {
     user: { ...UserDatabase },
     music: { ...SongDatabase },
+    activePage: 'home',
   };
+
+  handlePageChange = page => {
+    this.setState({ activePage: page });
+    this.props.history.push(`/${page}`);
+  };
+
   render() {
     return (
       <div className="App">
-        <SideBar className="Right_sidebar" />
+        <SideBar
+          className="Right_sidebar"
+          handlePageChange={this.handlePageChange}
+          {...this.state}
+        />
         {/* <Switch>
           <Route exact path="/" component={LandingPage} />
           <Route path="/home" component={LandingPage} />
