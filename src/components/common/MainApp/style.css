@@ -50,8 +50,12 @@
 }
 
 .ma_logo {
+  width: 50px;
+  height: 50px;
   margin-left: auto;
-  color: #d8d8d8;
+  background-image: url('../../../assets/profile.png');
+  background-size: 50px 50px;
+  background-position: center;
 }
 
 .ma_content {

@@ -21,7 +21,7 @@ export const MainAppView = props => (
       <div className="search">
         <input type="text" placeholder="Search" className="search_input" />
       </div>
-      <div className="ma_logo">LOGO</div>
+      <div className="ma_logo" />
     </div>
     <div className="ma_content">
       <Switch>
