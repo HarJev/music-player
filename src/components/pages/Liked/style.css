@@ -1,0 +1,50 @@
+.liked_box {
+  width: inherit;
+  height: inherit;
+  cursor: default;
+}
+
+.liked_header {
+  display: flex;
+  height: 240px;
+  margin-top: 20px;
+}
+
+.liked_header_image {
+  width: 240px;
+  height: 240px;
+  margin-right: 25px;
+  background-image: url('../../../assets/liked.png');
+  background-size: 240px 240px;
+}
+
+.liked_header_text {
+  display: flex;
+  flex-direction: column;
+  height: 240px;
+  justify-content: center;
+}
+
+.liked_header_title {
+  font-size: 46.6px;
+  font-weight: bold;
+  line-height: 1.37;
+  letter-spacing: 0.19px;
+  text-align: left;
+  color: #eeeeee;
+  padding-bottom: 15px;
+}
+
+.liked_header_subtext {
+  font-size: 17.6px;
+  letter-spacing: 0.07px;
+  text-align: left;
+  color: #d6d6d6;
+  padding-bottom: 10px;
+}
+
+.liked_header_divider {
+  width: 447px;
+  height: 1px;
+  background-color: #ffffff;
+}
