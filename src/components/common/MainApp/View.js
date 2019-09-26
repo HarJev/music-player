@@ -5,6 +5,7 @@ import { Route, Switch } from 'react-router-dom';
 
 import './style.css';
 import Home from '../../pages/Home/View';
+import { Liked } from 'components/pages/Liked';
 
 export const MainAppView = props => (
   <div className="ma_box">
@@ -20,12 +21,13 @@ export const MainAppView = props => (
       <div className="search">
         <input type="text" placeholder="Search" className="search_input" />
       </div>
-      <div className="ma_logo">LOGO</div>
+      <div className="ma_logo" />
     </div>
     <div className="ma_content">
       <Switch>
         <Route exact path="/" render={() => <Home {...props} />} />
         <Route path="/home" render={() => <Home {...props} />} />
+        <Route path="/liked" render={() => <Liked {...props} />} />
       </Switch>
     </div>
   </div>

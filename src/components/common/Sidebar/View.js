@@ -32,7 +32,10 @@ export const SidebarView = props => (
           </div>
           <div className="sb_circle_navs_text">Radio</div>
         </div>
-        <div className="sb_circle_navs_item">
+        <div
+          className="sb_circle_navs_item"
+          onClick={() => props.handlePageChange('liked')}
+        >
           <div className="sb_circle_navs_circle">
             <FavoriteBorderIcon />
           </div>
