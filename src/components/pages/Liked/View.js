@@ -1,19 +1,92 @@
 import React from 'react';
+import PerfectScrollbar from 'react-perfect-scrollbar';
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
+import CalendarTodayIcon from '@material-ui/icons/CalendarToday';
+import AccessTimeIcon from '@material-ui/icons/AccessTime';
+import FavoriteIcon from '@material-ui/icons/Favorite';
+import PlayCircleOutlineIcon from '@material-ui/icons/PlayCircleOutline';
 
 import './style.css';
 
 export const Liked = props => (
   <div className="liked_box">
-    <div className="liked_header">
-      <div className="liked_header_image" />
-      <div className="liked_header_text">
-        <div className="liked_header_title">Songs You Liked</div>
-        <div className="liked_header_subtext">
-          Your heart, hearted these songs!
+    <PerfectScrollbar>
+      <div className="liked_header">
+        <div className="liked_header_image" />
+        <div className="liked_header_text">
+          <div className="liked_header_title">Songs You Liked</div>
+          <div className="liked_header_subtext">
+            Your heart, hearted these songs!
+          </div>
+          <div className="liked_header_divider" />
         </div>
-        <div className="liked_header_divider" />
       </div>
-    </div>
+
+      <Table className="liked_table">
+        <TableHead>
+          <TableRow>
+            <TableCell classes={{ head: 'table_header' }}> </TableCell>
+            <TableCell classes={{ head: 'table_header' }}>TITLE</TableCell>
+            <TableCell classes={{ head: 'table_header' }}>ARTIST</TableCell>
+            <TableCell classes={{ head: 'table_header' }}>ALBUM</TableCell>
+            <TableCell classes={{ head: 'table_header' }}>
+              <CalendarTodayIcon />
+            </TableCell>
+            <TableCell classes={{ head: 'table_header' }}>
+              <AccessTimeIcon />
+            </TableCell>
+            <TableCell classes={{ head: 'table_header' }}> </TableCell>
+          </TableRow>
+        </TableHead>
+        <TableBody>
+          {props.user.liked.songs.map(song =>
+            props.music.songs.map(listSong =>
+              listSong.id === song.id ? (
+                <TableRow key={song.id} classes={{ root: 'table_row' }}>
+                  <TableCell align="center" classes={{ root: 'table_cell' }}>
+                    <PlayCircleOutlineIcon
+                      style={{ width: '30px', height: '30px' }}
+                      className="table_icon"
+                    />
+                  </TableCell>
+                  <TableCell
+                    component="th"
+                    scope="row"
+                    classes={{ root: 'table_cell' }}
+                  >
+                    {listSong.title}
+                  </TableCell>
+                  <TableCell classes={{ root: 'table_cell' }}>
+                    <span className="liked_underline">{listSong.artist}</span>
+                    {listSong.feat.map(ft => (
+                      <span>
+                        ,&nbsp;<span className="liked_underline">{ft}</span>
+                      </span>
+                    ))}
+                  </TableCell>
+                  <TableCell classes={{ root: 'table_cell' }}>
+                    <span className="liked_underline">{listSong.album}</span>
+                  </TableCell>
+                  <TableCell classes={{ root: 'table_cell' }}>
+                    {song.date}
+                  </TableCell>
+                  <TableCell classes={{ root: 'table_cell' }}>
+                    {props.formatTime(listSong.length)}
+                  </TableCell>
+                  <TableCell classes={{ root: 'table_cell' }}>
+                    <FavoriteIcon style={{ color: '#fff' }} />
+                  </TableCell>
+                </TableRow>
+              ) : null
+            )
+          )}
+        </TableBody>
+      </Table>
+    </PerfectScrollbar>
   </div>
 );
 
