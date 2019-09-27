@@ -83,8 +83,7 @@
 .c_albumArt {
   width: 62px;
   height: 62px;
-  background-image: url('../../../assets/graduation.jpg');
-  background-size: 70px 70px;
+  object-fit: contain;
 }
 
 .c_textData {

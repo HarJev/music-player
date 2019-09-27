@@ -12,10 +12,44 @@ import SongDatabase from './assets/stubs/songs.json';
 import './App.css';
 
 class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.playerRef = React.createRef();
+  }
+
   state = {
     user: { ...UserDatabase },
     music: { ...SongDatabase },
     activePage: 'home',
+    selectedTrack: {
+      id: '0',
+      title: '',
+      artist: '',
+      feat: [],
+      album: '',
+      length: 0,
+      albumArt: 'profile_picture.png',
+      track: 'driptoohard.mp3',
+    },
+    playing: false,
+  };
+
+  formatTime = time => {
+    // Hours, minutes and seconds
+    var hrs = ~~(time / 3600);
+    var mins = ~~((time % 3600) / 60);
+    var secs = ~~time % 60;
+
+    // Output like "1:01" or "4:03:59" or "123:03:59"
+    var ret = '';
+
+    if (hrs > 0) {
+      ret += '' + hrs + ':' + (mins < 10 ? '0' : '');
+    }
+
+    ret += '' + mins + ':' + (secs < 10 ? '0' : '');
+    ret += '' + secs;
+    return ret;
   };
 
   handlePageChange = page => {
@@ -23,7 +57,15 @@ class App extends React.Component {
     this.props.history.push(`/${page}`);
   };
 
+  playTrack = song => {
+    this.setState({ selectedTrack: { ...song } });
+
+    // this.playerRef.src = `assets/music/${song.track}`;
+    // this.playerRef.load();
+  };
+
   render() {
+    console.log(this.playerRef.paused);
     return (
       <div className="App">
         <SideBar
@@ -37,7 +79,13 @@ class App extends React.Component {
         </Switch> */}
         <div className="Main">
           <div className="Main_top">
-            <MainApp className="Main_app" {...this.state} />
+            <MainApp
+              className="Main_app"
+              {...this.state}
+              playerRef={this.playerRef}
+              formatTime={this.formatTime}
+              playTrack={this.playTrack}
+            />
             <Rightbar
               className="Right_sidebar"
               name={
@@ -47,7 +95,12 @@ class App extends React.Component {
               }
             />
           </div>
-          <Controls className="controls" {...this.state} />
+          <Controls
+            className="controls"
+            {...this.state}
+            playerRef={this.playerRef}
+            formatTime={this.formatTime}
+          />
         </div>
       </div>
     );

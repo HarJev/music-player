@@ -9,6 +9,7 @@ import CalendarTodayIcon from '@material-ui/icons/CalendarToday';
 import AccessTimeIcon from '@material-ui/icons/AccessTime';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import PlayCircleOutlineIcon from '@material-ui/icons/PlayCircleOutline';
+import PauseCircleOutlineIcon from '@material-ui/icons/PauseCircleOutline';
 
 import './style.css';
 
@@ -46,21 +47,51 @@ export const Liked = props => (
           {props.user.liked.songs.map(song =>
             props.music.songs.map(listSong =>
               listSong.id === song.id ? (
-                <TableRow key={song.id} classes={{ root: 'table_row' }}>
+                <TableRow
+                  key={song.id}
+                  classes={{
+                    root:
+                      props.selectedTrack.id === listSong.id
+                        ? 'table_row activeTrack'
+                        : 'table_row',
+                  }}
+                >
                   <TableCell align="center" classes={{ root: 'table_cell' }}>
-                    <PlayCircleOutlineIcon
-                      style={{ width: '30px', height: '30px' }}
-                      className="table_icon"
-                    />
+                    {props.selectedTrack.id === listSong.id ? (
+                      <PauseCircleOutlineIcon
+                        style={{ width: '30px', height: '30px' }}
+                        className="table_icon"
+                        onClick={() => props.playTrack(listSong)}
+                      />
+                    ) : (
+                      <PlayCircleOutlineIcon
+                        style={{ width: '30px', height: '30px' }}
+                        className="table_icon"
+                        onClick={() => props.playTrack(listSong)}
+                      />
+                    )}
                   </TableCell>
                   <TableCell
                     component="th"
                     scope="row"
-                    classes={{ root: 'table_cell' }}
+                    classes={{
+                      root:
+                        props.selectedTrack.id === listSong.id
+                          ? 'table_cell_active'
+                          : 'table_cell',
+                    }}
                   >
+                    {console.log(props.selectedTrack.id === listSong.id)}
                     {listSong.title}
                   </TableCell>
-                  <TableCell classes={{ root: 'table_cell' }}>
+                  <TableCell
+                    classes={{
+                      root:
+                        props.selectedTrack.id === listSong.id
+                          ? 'table_cell_active'
+                          : 'table_cell',
+                    }}
+                  >
                     <span className="liked_underline">{listSong.artist}</span>
                     {listSong.feat.map(ft => (
                       <span>
@@ -68,13 +99,34 @@ export const Liked = props => (
                       </span>
                     ))}
                   </TableCell>
-                  <TableCell classes={{ root: 'table_cell' }}>
+                  <TableCell
+                    classes={{
+                      root:
+                        props.selectedTrack.id === listSong.id
+                          ? 'table_cell_active'
+                          : 'table_cell',
+                    }}
+                  >
                     <span className="liked_underline">{listSong.album}</span>
                   </TableCell>
-                  <TableCell classes={{ root: 'table_cell' }}>
+                  <TableCell
+                    classes={{
+                      root:
+                        props.selectedTrack.id === listSong.id
+                          ? 'table_cell_active'
+                          : 'table_cell',
+                    }}
+                  >
                     {song.date}
                   </TableCell>
-                  <TableCell classes={{ root: 'table_cell' }}>
+                  <TableCell
+                    classes={{
+                      root:
+                        props.selectedTrack.id === listSong.id
+                          ? 'table_cell_active'
+                          : 'table_cell',
+                    }}
+                  >
                     {props.formatTime(listSong.length)}
                   </TableCell>
                   <TableCell classes={{ root: 'table_cell' }}>

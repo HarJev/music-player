@@ -5,7 +5,11 @@ export class Container extends Component {
   render() {
     return (
       <div>
-        <ControlsView />
+        <ControlsView
+          {...this.props}
+          formatTime={this.props.formatTime}
+          playerRef={this.props.playerRef}
+        />
       </div>
     );
   }

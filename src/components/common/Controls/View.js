@@ -12,7 +12,7 @@ import PlaylistPlayIcon from '@material-ui/icons/PlaylistPlay';
 
 import './style.css';
 
-export const ControlsView = () => (
+export const ControlsView = props => (
   <div className="c_box">
     <div className="c_right" />
     <div className="c_left">
@@ -22,16 +22,33 @@ export const ControlsView = () => (
         </div>
         <div className="c_time">
           <span className="c_time_progress">1:17</span>
-          <span className="c_time_songLength">5:11</span>
+          <span className="c_time_songLength">
+            {props.formatTime(props.selectedTrack.length)}
+          </span>
         </div>
         {/* <div className="c_tempProgressEnd" /> */}
       </div>
       <div className="c_bottom">
         <div className="c_songData">
-          <div className="c_albumArt" />
+          <div className="c_albumArt_div">
+            <img
+              src={require(`assets/${props.selectedTrack.albumArt}`)}
+              alt={props.selectedTrack.title}
+              className="c_albumArt"
+            />
+          </div>
           <div className="c_textData">
-            <div className="c_songName">Stronger</div>
-            <div className="c_artist">Kanye West</div>
+            <div className="c_songName">{props.selectedTrack.title}</div>
+            <span className="c_artist">
+              <span className="liked_underline">
+                {props.selectedTrack.artist}
+              </span>
+              {props.selectedTrack.feat.map(ft => (
+                <span>
+                  ,&nbsp;<span className="liked_underline">{ft}</span>
+                </span>
+              ))}
+            </span>
           </div>
           <div className="c_like" style={{ color: '#ffffff' }}>
             <FavoriteBorderIcon />
@@ -74,5 +91,11 @@ export const ControlsView = () => (
         </div>
       </div>
     </div>
+    <audio
+      ref={props.playerRef}
+      autoPlay
+      src={require(`assets/music/${props.selectedTrack.track}`)}
+      paused
+    />
   </div>
 );

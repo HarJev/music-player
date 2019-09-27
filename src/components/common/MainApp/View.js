@@ -27,7 +27,10 @@ export const MainAppView = props => (
       <Switch>
         <Route exact path="/" render={() => <Home {...props} />} />
         <Route path="/home" render={() => <Home {...props} />} />
-        <Route path="/liked" render={() => <Liked {...props} />} />
+        <Route
+          path="/liked"
+          render={() => <Liked {...props} playTrack={props.playTrack} />}
+        />
       </Switch>
     </div>
   </div>
