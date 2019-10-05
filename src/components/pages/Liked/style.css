@@ -81,6 +81,15 @@
   border-bottom: 1px solid #3b4c64 !important;
 }
 
+.table_cell_active {
+  font-size: 16px !important;
+  line-height: 1.35 !important;
+  letter-spacing: 1px !important;
+  text-align: left !important;
+  color: #1ed761 !important;
+  border-bottom: 1px solid #3b4c64 !important;
+}
+
 .liked_underline:hover {
   text-decoration: underline !important;
 }
