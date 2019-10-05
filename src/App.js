@@ -187,6 +187,10 @@ class App extends React.Component {
     this.setState({ volume: volume });
   };
 
+  handleTimeChange = (event, time) => {
+    this.playerRef.currentTime = (time / 100) * this.state.selectedTrack.length;
+  };
+
   render() {
     return (
       <div className="App">
@@ -227,6 +231,7 @@ class App extends React.Component {
             handlePlayPause={this.handlePlayPause}
             handleSkip={this.handleSkip}
             handleVolumeChange={this.handleVolumeChange}
+            handleTimeChange={this.handleTimeChange}
           />
         </div>
         <audio ref={ref => (this.playerRef = ref)} />

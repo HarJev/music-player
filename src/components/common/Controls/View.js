@@ -18,15 +18,16 @@ export const ControlsView = props => (
     <div className="c_right" />
     <div className="c_left">
       <div className="c_musicProgress">
-        <div className="c_emptyProgress">
-          <div
-            className="c_songProgress"
-            style={{
-              width: `${props.currentTimePercentage}%`,
-              transition: 'all 0.5s ease-in-out',
-            }}
-          />
-        </div>
+        <Slider
+          value={props.currentTimePercentage}
+          onChange={props.handleTimeChange}
+          classes={{
+            root: 'c_rootProgress',
+            rail: 'c_emptyProgress',
+            track: 'c_songProgress',
+            thumb: 'c_thumb',
+          }}
+        />
         <div className="c_time">
           <span className="c_time_progress">
             {props.formatTime(props.currentTime)}
@@ -105,12 +106,11 @@ export const ControlsView = props => (
             <Slider
               value={props.volume}
               onChange={props.handleVolumeChange}
-              // className="c_volumeBar"
               classes={{
                 root: 'c_volume',
                 rail: 'c_volumeBar',
                 track: 'c_volumeBar_filled',
-                thumb: 'c_volumeBar_thumb',
+                thumb: 'c_thumb',
               }}
             />
           </div>

@@ -12,6 +12,7 @@ export class Container extends Component {
           handlePlayPause={this.props.handlePlayPause}
           handleSkip={this.props.handleSkip}
           handleVolumeChange={this.props.handleVolumeChange}
+          handleTimeChange={this.props.handleTimeChange}
         />
       </div>
     );
