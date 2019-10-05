@@ -1,0 +1,64 @@
+.ma_box {
+  height: inherit;
+  display: flex;
+  flex-direction: column;
+
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 24px;
+  background-image: linear-gradient(to bottom, #000c1d, #08152d);
+}
+
+.ma_top {
+  width: inherit;
+  display: flex;
+}
+
+.back_forward {
+  width: 60px;
+  display: flex;
+
+  color: #e1e1e1;
+  transition: 0.2s;
+}
+
+.back,
+.forward {
+  width: 30px;
+  height: 30px;
+}
+
+.nav:hover {
+  width: 30px;
+  height: 30px;
+}
+
+.search {
+  padding-left: 10px;
+}
+
+.search_input {
+  width: 310px;
+  height: 35px;
+  border-radius: 25px;
+  background-color: #d8d8d8;
+  border: none;
+}
+
+.search_input::placeholder {
+  padding-left: 22px;
+}
+
+.ma_logo {
+  width: 50px;
+  height: 50px;
+  margin-left: auto;
+  background-image: url('../../../assets/profile.png');
+  background-size: 50px 50px;
+  background-position: center;
+}
+
+.ma_content {
+  width: inherit;
+  height: 100%;
+}

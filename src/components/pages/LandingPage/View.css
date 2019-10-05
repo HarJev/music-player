@@ -1,0 +1,39 @@
+.webp .lp_Background {
+  background-image: url('../../../assets/landingpagebg.webp');
+}
+.no-webp .lp_Background {
+  background-image: url('../../../assets/landingpagebg.jpg');
+}
+
+.lp_Background {
+  height: 100vh;
+  width: 100vw;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.lp_transparent_layer {
+  width: inherit;
+  height: inherit;
+
+  background-color: rgba(3, 3, 3, 0.5);
+}
+
+.lp_greeting_text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: inherit;
+  color: #fff;
+  text-shadow: 1px 1px 2px #e5e5e5;
+}
+
+.lp_greeting_welcome {
+  font-size: 25px;
+}
+
+.lp_greeting_tagline {
+  font-size: 15px;
+}

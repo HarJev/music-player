@@ -1,0 +1,68 @@
+import React from 'react';
+import KeyboardArrowLeftIcon from '@material-ui/icons/KeyboardArrowLeft';
+import KeyboardArrowRightIcon from '@material-ui/icons/KeyboardArrowRight';
+import PlayCircleOutlineIcon from '@material-ui/icons/PlayCircleOutline';
+import PauseCircleOutlineIcon from '@material-ui/icons/PauseCircleOutline';
+
+import './style.css';
+
+export const Home = props => (
+  <div className="home_box">
+    <div className="title">Home</div>
+
+    <div className="category_header_section">
+      <div className="category_header">
+        <span>Recently Played</span>
+        <div className="Home_scroll_left_right">
+          <div className="back">
+            <KeyboardArrowLeftIcon className="nav" />
+          </div>
+          <div className="forward">
+            <KeyboardArrowRightIcon className="nav" />
+          </div>
+        </div>
+      </div>
+      <div className="category_divider" />
+    </div>
+
+    <div className="home_recentlyPlayedList">
+      {props.music.songs.map(song =>
+        props.user.recentlyPlayed.includes(song.id) ? (
+          <div className="recentylPlayed_item">
+            <div className="recentlyPlayed_art_play">
+              <img
+                src={require(`assets/${song.albumArt}`)}
+                alt={song.title}
+                className="recentlyPlayed_art"
+              />
+              <div
+                className="recentlyPlayed_play"
+                style={
+                  props.selectedTrack.id === song.id
+                    ? { visibility: 'visible' }
+                    : null
+                }
+              >
+                {props.selectedTrack.id === song.id && props.playing ? (
+                  <PauseCircleOutlineIcon
+                    className="c_PausePlayIcon"
+                    onClick={() => props.playTrack(song)}
+                  />
+                ) : (
+                  <PlayCircleOutlineIcon
+                    className="c_PausePlayIcon"
+                    onClick={() => props.playTrack(song)}
+                  />
+                )}
+              </div>
+            </div>
+            <div className="recentlyPlayed_title">{song.title}</div>
+            <div className="recentlyPlayed_artist">{song.artist}</div>
+          </div>
+        ) : null
+      )}
+    </div>
+  </div>
+);
+
+export default Home;

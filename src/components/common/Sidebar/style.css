@@ -1,0 +1,189 @@
+.sb_box {
+  height: 100vh;
+  width: 302px;
+  opacity: 0.91;
+  backdrop-filter: blur(11.1px);
+  background-image: linear-gradient(to top, #010b1e, #020b1c 100%);
+  overflow: auto;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  overscroll-behavior: contain;
+}
+
+.sb_circle_navs {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 45px;
+}
+
+.sb_circle_navs_circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 49px;
+  height: 49px;
+  margin-bottom: 3px;
+  border-radius: 24.5px;
+  border: solid 2px #d4d4d4;
+  color: #d4d4d4;
+  transition: 0.4s;
+}
+
+.sb_circle_navs_item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin-bottom: 17px;
+}
+
+.sb_circle_navs_item:hover .sb_circle_navs_text,
+.sb_circle_navs_item:hover .sb_circle_navs_circle {
+  color: white;
+}
+
+.sb_circle_navs_text {
+  text-align: center;
+  font-size: 14px;
+  letter-spacing: 0.09px;
+  color: #d4d4d4;
+  transition: 0.4s;
+}
+
+.sb_madeForYou {
+  width: inherit;
+  display: flex;
+  justify-content: center;
+  margin-top: 17px;
+  margin-bottom: 11px;
+}
+
+.sb_madeForYou_btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 258px;
+  height: 45px;
+  border-radius: 22.5px;
+  background-image: linear-gradient(to left, #1ed761, #1e64d7);
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.sb_madeForYou_text {
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 1.38;
+  letter-spacing: 0.06px;
+  color: #212020;
+}
+
+.sb_section {
+  margin-top: 11px;
+  display: flex;
+  flex-direction: column;
+  cursor: default;
+}
+
+.sb_section_nav_indicator {
+  margin-left: 0px;
+  width: 6px;
+  height: 28px;
+}
+
+.sb_sectionHeader {
+  font-size: 18px;
+  line-height: 2.17;
+  color: #3b4c64;
+  margin-left: 50px;
+}
+
+.sb_section_nav {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 8px;
+  font-family: 'Raleway', sans-serif;
+}
+
+.sb_section_nav_icon {
+  margin-left: 44px;
+  color: #565656;
+}
+
+.sb_section_nav_text {
+  padding-left: 21px;
+
+  opacity: 0.5;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 2.17;
+  color: #ffffff;
+}
+
+.sb_section_nav:hover .sb_section_nav_indicator {
+  background-color: #2763bb;
+}
+
+.sb_section_nav_indicator_active {
+  background-color: #2763bb;
+  margin-left: 0px;
+  width: 6px;
+  height: 28px;
+}
+
+.sb_section_nav:hover .sb_section_nav_text {
+  opacity: 1;
+}
+
+.sb_section_nav_text_active {
+  padding-left: 21px;
+
+  opacity: 1;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 2.17;
+  color: #ffffff;
+}
+
+.sb_divider {
+  width: 203px;
+  height: 1px;
+  opacity: 0.5;
+  background-color: #3b4c64;
+  border: 0;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.sb_addPlaylist {
+  width: inherit;
+  display: flex;
+  justify-content: center;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+.sb_addPlayList_input {
+  background: transparent;
+  width: 258.8px;
+  height: 45px;
+  border-radius: 22.5px;
+  border: solid 1px #3b4c64;
+  padding-left: 22px;
+  font-size: 14px;
+  letter-spacing: 0.06px;
+  color: #597193;
+}
+
+.sb_addPlayList_input::placeholder {
+  color: #597193;
+}
+
+.sb_addPlayList_input:focus {
+  outline: 0px !important;
+  -webkit-appearance: none;
+  box-shadow: none !important;
+  border: solid 1px #ffffff;
+}

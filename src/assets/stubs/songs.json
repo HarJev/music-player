@@ -1,0 +1,104 @@
+{
+  "songs": [
+    {
+      "id": "1",
+      "title": "Drip Too Hard",
+      "artist": "Lil Baby",
+      "feat": ["Gunna"],
+      "album": "Single",
+      "length": 145,
+      "albumArt": "driptoohard.jpg",
+      "track": "driptoohard.mp3"
+    },
+    {
+      "id": "2",
+      "title": "Get You (feat. Kali Uchis)",
+      "artist": "Daniel Caesar",
+      "feat": ["Kali Uchis"],
+      "album": "Freudian",
+      "length": 278,
+      "albumArt": "freudian.jpg",
+      "track": "getyou.mp3"
+    },
+    {
+      "id": "3",
+      "title": "Going Bad (feat. Drake)",
+      "artist": "Meek Mill",
+      "feat": ["Drake"],
+      "album": "Championships",
+      "length": 180,
+      "albumArt": "championships.jpg",
+      "track": "goingbad.mp3"
+    },
+    {
+      "id": "4",
+      "title": "Kevin's Heart",
+      "artist": "J. Cole",
+      "feat": [],
+      "album": "K.O.D.",
+      "length": 200,
+      "albumArt": "kod.jpg",
+      "track": "kevinsheart.mp3"
+    },
+    {
+      "id": "5",
+      "title": "Look Back At It",
+      "artist": "A Boogie Wit da Hoodie",
+      "feat": [],
+      "album": "Hoodie SZN",
+      "length": 179,
+      "albumArt": "hoodieszn.jpg",
+      "track": "lookbackatit.mp3"
+    },
+    {
+      "id": "6",
+      "title": "Middle Child",
+      "artist": "J. Cole",
+      "feat": [],
+      "album": "Single",
+      "length": 213,
+      "albumArt": "middlechild.jpg",
+      "track": "middlechild.mp3"
+    },
+    {
+      "id": "7",
+      "title": "Sanguine Paradise",
+      "artist": "Lil Uzi Vert",
+      "feat": [],
+      "album": "Single",
+      "length": 244,
+      "albumArt": "sanguineparadise.jpg",
+      "track": "sanguineparadise.mp3"
+    },
+    {
+      "id": "8",
+      "title": "STOOPID",
+      "artist": "6ix9ine",
+      "feat": ["Bobby Shmurda"],
+      "album": "DUMMY BOY",
+      "length": 152,
+      "albumArt": "dummyboy.jpg",
+      "track": "stoopid.mp3"
+    },
+    {
+      "id": "9",
+      "title": "Sunflower",
+      "artist": "Post Malone",
+      "feat": ["Swae Lee"],
+      "album": "Single",
+      "length": 158,
+      "albumArt": "sunflower.jpg",
+      "track": "sunflower.mp3"
+    },
+    {
+      "id": "10",
+      "title": "Unicorn Purp",
+      "artist": "Future",
+      "feat": ["Young Thug", "Gunna"],
+      "album": "The Wizrd",
+      "length": 246,
+      "albumArt": "thewizrd.png",
+      "track": "unicornpurp.mp3"
+    }
+  ]
+}
