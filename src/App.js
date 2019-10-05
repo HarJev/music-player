@@ -12,11 +12,6 @@ import SongDatabase from './assets/stubs/songs.json';
 import './App.css';
 
 class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.playerRef = React.createRef();
-  }
-
   state = {
     user: { ...UserDatabase },
     music: { ...SongDatabase },
@@ -29,9 +24,93 @@ class App extends React.Component {
       album: '',
       length: 0,
       albumArt: 'profile_picture.png',
-      track: 'driptoohard.mp3',
+      track: '',
     },
     playing: false,
+    currentTime: 0,
+    currentTimePercentage: 0,
+    currentPlaylist: [],
+  };
+
+  componentDidMount() {
+    this.playerRef.addEventListener('timeupdate', e => {
+      this.setState({
+        currentTime: e.target.currentTime,
+        currentTimePercentage:
+          (e.target.currentTime / this.state.selectedTrack.length) * 100,
+      });
+      if (
+        (e.target.currentTime / this.state.selectedTrack.length) * 100 >=
+        100
+      ) {
+        if (this.state.currentPlaylist.length >= 1) {
+          this.handleSkip('next');
+        }
+      }
+    });
+  }
+
+  componentWillUnmount() {
+    this.playerRef.removeEventListener('timeupdate', () => {});
+  }
+
+  pushToPlaylist = list => {
+    if (this.state.currentPlaylist === list) {
+      return;
+    }
+    this.setState(
+      {
+        currentPlaylist: list,
+      },
+      () => console.log('hey', this.state.currentPlaylist)
+    );
+  };
+
+  handleSkip = direction => {
+    if (direction === 'next') {
+      const currentTrackIndex = this.state.currentPlaylist.findIndex(
+        song => song.id === this.state.selectedTrack.id
+      );
+      console.log('currentTrackIndex', currentTrackIndex);
+      let nextTrackIndex;
+      if (currentTrackIndex === this.state.currentPlaylist.length - 1) {
+        nextTrackIndex = 0;
+      } else {
+        nextTrackIndex = currentTrackIndex + 1;
+      }
+      console.log('nextTrackIndex', nextTrackIndex);
+      console.log(
+        'this.state.currentPlaylist',
+        this.state.currentPlaylist[nextTrackIndex]
+      );
+      this.playerRef.src = require(`assets/music/${this.state.currentPlaylist[nextTrackIndex].track}`);
+      this.playerRef.play();
+      this.setState({
+        selectedTrack: this.state.currentPlaylist[nextTrackIndex],
+      });
+    }
+    if (direction === 'previous') {
+      const currentTrackIndex = this.state.currentPlaylist.findIndex(
+        song => song.id === this.state.selectedTrack.id
+      );
+      console.log('currentTrackIndex', currentTrackIndex);
+      let previousTrackIndex;
+      if (currentTrackIndex === 0) {
+        previousTrackIndex = 0;
+      } else {
+        previousTrackIndex = currentTrackIndex - 1;
+      }
+      console.log('previousTrackIndex', previousTrackIndex);
+      console.log(
+        'this.state.currentPlaylist',
+        this.state.currentPlaylist[previousTrackIndex]
+      );
+      this.playerRef.src = require(`assets/music/${this.state.currentPlaylist[previousTrackIndex].track}`);
+      this.playerRef.play();
+      this.setState({
+        selectedTrack: this.state.currentPlaylist[previousTrackIndex],
+      });
+    }
   };
 
   formatTime = time => {
@@ -57,15 +136,52 @@ class App extends React.Component {
     this.props.history.push(`/${page}`);
   };
 
-  playTrack = song => {
-    this.setState({ selectedTrack: { ...song } });
+  handlePlayPause = () => {
+    if (this.state.selectedTrack.id === '0') {
+      return;
+    }
 
-    // this.playerRef.src = `assets/music/${song.track}`;
-    // this.playerRef.load();
+    this.setState({ playing: !this.state.playing }, () => {
+      if (this.state.playing) {
+        this.playerRef.play();
+      } else {
+        this.playerRef.pause();
+      }
+    });
+  };
+
+  playTrack = song => {
+    if (
+      this.state.playing === false &&
+      this.state.selectedTrack.id !== song.id
+    ) {
+      this.playerRef.src = require(`assets/music/${song.track}`);
+      this.playerRef.play();
+
+      this.setState({ selectedTrack: { ...song }, playing: true });
+    } else if (
+      this.state.playing === false &&
+      this.state.selectedTrack.id === song.id
+    ) {
+      this.playerRef.play();
+      this.setState({ playing: true });
+    } else if (
+      this.state.playing === true &&
+      this.state.selectedTrack.id !== song.id
+    ) {
+      this.playerRef.src = require(`assets/music/${song.track}`);
+      this.playerRef.play();
+      this.setState({ selectedTrack: { ...song } });
+    } else if (
+      this.state.playing === true &&
+      this.state.selectedTrack.id === song.id
+    ) {
+      this.playerRef.pause();
+      this.setState({ playing: false });
+    }
   };
 
   render() {
-    console.log(this.playerRef.paused);
     return (
       <div className="App">
         <SideBar
@@ -85,6 +201,8 @@ class App extends React.Component {
               playerRef={this.playerRef}
               formatTime={this.formatTime}
               playTrack={this.playTrack}
+              pushToPlaylist={this.pushToPlaylist}
+              likedSongs={this.likedSongs}
             />
             <Rightbar
               className="Right_sidebar"
@@ -100,8 +218,11 @@ class App extends React.Component {
             {...this.state}
             playerRef={this.playerRef}
             formatTime={this.formatTime}
+            handlePlayPause={this.handlePlayPause}
+            handleSkip={this.handleSkip}
           />
         </div>
+        <audio ref={ref => (this.playerRef = ref)} />
       </div>
     );
   }

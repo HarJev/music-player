@@ -42,8 +42,7 @@
   display: flex;
 }
 
-.c_tempProgress {
-  width: 25%;
+.c_songProgress {
   border-radius: 2px;
   background-image: linear-gradient(to left, #1ed761, #1e64d7);
 }
@@ -138,6 +137,10 @@
   width: 60px !important;
   height: 60px !important;
   color: #b3b3b3;
+}
+
+.c_PausePlayIcon:hover {
+  color: #ffffff;
 }
 
 .c_outsideIcon {

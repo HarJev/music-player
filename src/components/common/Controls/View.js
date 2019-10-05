@@ -1,6 +1,6 @@
 import React from 'react';
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
-// import PlayCircleOutlineIcon from '@material-ui/icons/PlayCircleOutline';
+import PlayCircleOutlineIcon from '@material-ui/icons/PlayCircleOutline';
 import PauseCircleOutlineIcon from '@material-ui/icons/PauseCircleOutline';
 import SkipNextIcon from '@material-ui/icons/SkipNext';
 import SkipPreviousIcon from '@material-ui/icons/SkipPrevious';
@@ -18,15 +18,22 @@ export const ControlsView = props => (
     <div className="c_left">
       <div className="c_musicProgress">
         <div className="c_emptyProgress">
-          <div className="c_tempProgress" />
+          <div
+            className="c_songProgress"
+            style={{
+              width: `${props.currentTimePercentage}%`,
+              transition: 'all 0.5s ease-in-out',
+            }}
+          />
         </div>
         <div className="c_time">
-          <span className="c_time_progress">1:17</span>
+          <span className="c_time_progress">
+            {props.formatTime(props.currentTime)}
+          </span>
           <span className="c_time_songLength">
             {props.formatTime(props.selectedTrack.length)}
           </span>
         </div>
-        {/* <div className="c_tempProgressEnd" /> */}
       </div>
       <div className="c_bottom">
         <div className="c_songData">
@@ -44,7 +51,7 @@ export const ControlsView = props => (
                 {props.selectedTrack.artist}
               </span>
               {props.selectedTrack.feat.map(ft => (
-                <span>
+                <span key={ft}>
                   ,&nbsp;<span className="liked_underline">{ft}</span>
                 </span>
               ))}
@@ -56,19 +63,32 @@ export const ControlsView = props => (
         </div>
         <div className="c_playbackControls_div">
           <div className="c_playbackControls">
-            <div className="c_outsideIcon">
+            <div className="c_outsideIcon_div">
               <ShuffleIcon className="c_outsideIcon" />
             </div>
-            <div className="c_otherIcon">
-              <SkipPreviousIcon className="c_otherIcon" />
+            <div className="c_otherIcon_div">
+              <SkipPreviousIcon
+                className="c_otherIcon"
+                onClick={() => props.handleSkip('previous')}
+              />
             </div>
-            <div className="c_PausePlayIcon">
-              <PauseCircleOutlineIcon className="c_PausePlayIcon" />
+            <div
+              className="c_PausePlayIcon_div"
+              onClick={props.handlePlayPause}
+            >
+              {props.playing ? (
+                <PauseCircleOutlineIcon className="c_PausePlayIcon" />
+              ) : (
+                <PlayCircleOutlineIcon className="c_PausePlayIcon" />
+              )}
             </div>
-            <div className="c_otherIcon">
-              <SkipNextIcon className="c_otherIcon" />
+            <div className="c_otherIcon_div">
+              <SkipNextIcon
+                className="c_otherIcon"
+                onClick={() => props.handleSkip('next')}
+              />
             </div>
-            <div className="c_outsideIcon">
+            <div className="c_outsideIcon_div">
               <LoopIcon className="c_outsideIcon" />
             </div>
           </div>
@@ -91,11 +111,5 @@ export const ControlsView = props => (
         </div>
       </div>
     </div>
-    <audio
-      ref={props.playerRef}
-      autoPlay
-      src={require(`assets/music/${props.selectedTrack.track}`)}
-      paused
-    />
   </div>
 );

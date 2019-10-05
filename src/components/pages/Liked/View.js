@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PerfectScrollbar from 'react-perfect-scrollbar';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -13,61 +13,90 @@ import PauseCircleOutlineIcon from '@material-ui/icons/PauseCircleOutline';
 
 import './style.css';
 
-export const Liked = props => (
-  <div className="liked_box">
-    <PerfectScrollbar>
-      <div className="liked_header">
-        <div className="liked_header_image" />
-        <div className="liked_header_text">
-          <div className="liked_header_title">Songs You Liked</div>
-          <div className="liked_header_subtext">
-            Your heart, hearted these songs!
-          </div>
-          <div className="liked_header_divider" />
-        </div>
-      </div>
+export class Liked extends Component {
+  componentDidMount() {
+    this.likedSongs();
+  }
 
-      <Table className="liked_table">
-        <TableHead>
-          <TableRow>
-            <TableCell classes={{ head: 'table_header' }}> </TableCell>
-            <TableCell classes={{ head: 'table_header' }}>TITLE</TableCell>
-            <TableCell classes={{ head: 'table_header' }}>ARTIST</TableCell>
-            <TableCell classes={{ head: 'table_header' }}>ALBUM</TableCell>
-            <TableCell classes={{ head: 'table_header' }}>
-              <CalendarTodayIcon />
-            </TableCell>
-            <TableCell classes={{ head: 'table_header' }}>
-              <AccessTimeIcon />
-            </TableCell>
-            <TableCell classes={{ head: 'table_header' }}> </TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {props.user.liked.songs.map(song =>
-            props.music.songs.map(listSong =>
-              listSong.id === song.id ? (
+  likedSongs = () => {
+    let liked = [];
+
+    this.props.user.liked.songs.map(song =>
+      this.props.music.songs.map(listSong =>
+        listSong.id === song.id
+          ? liked.push({
+              id: listSong.id,
+              title: listSong.title,
+              artist: listSong.artist,
+              feat: listSong.feat,
+              album: listSong.album,
+              date: song.date,
+              length: listSong.length,
+              track: listSong.track,
+              albumArt: listSong.albumArt,
+            })
+          : null
+      )
+    );
+    this.props.pushToPlaylist(liked);
+    console.log('liked', liked);
+  };
+
+  render() {
+    return (
+      <div className="liked_box">
+        <PerfectScrollbar>
+          <div className="liked_header">
+            <div className="liked_header_image" />
+            <div className="liked_header_text">
+              <div className="liked_header_title">Songs You Liked</div>
+              <div className="liked_header_subtext">
+                Your heart, hearted these songs!
+              </div>
+              <div className="liked_header_divider" />
+            </div>
+          </div>
+
+          <Table className="liked_table">
+            <TableHead>
+              <TableRow>
+                <TableCell classes={{ head: 'table_header' }}> </TableCell>
+                <TableCell classes={{ head: 'table_header' }}>TITLE</TableCell>
+                <TableCell classes={{ head: 'table_header' }}>ARTIST</TableCell>
+                <TableCell classes={{ head: 'table_header' }}>ALBUM</TableCell>
+                <TableCell classes={{ head: 'table_header' }}>
+                  <CalendarTodayIcon />
+                </TableCell>
+                <TableCell classes={{ head: 'table_header' }}>
+                  <AccessTimeIcon />
+                </TableCell>
+                <TableCell classes={{ head: 'table_header' }}> </TableCell>
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              {this.props.currentPlaylist.map(listSong => (
                 <TableRow
-                  key={song.id}
+                  key={listSong.id}
                   classes={{
                     root:
-                      props.selectedTrack.id === listSong.id
+                      this.props.selectedTrack.id === listSong.id
                         ? 'table_row activeTrack'
                         : 'table_row',
                   }}
                 >
                   <TableCell align="center" classes={{ root: 'table_cell' }}>
-                    {props.selectedTrack.id === listSong.id ? (
+                    {this.props.selectedTrack.id === listSong.id &&
+                    this.props.playing ? (
                       <PauseCircleOutlineIcon
                         style={{ width: '30px', height: '30px' }}
                         className="table_icon"
-                        onClick={() => props.playTrack(listSong)}
+                        onClick={() => this.props.playTrack(listSong)}
                       />
                     ) : (
                       <PlayCircleOutlineIcon
                         style={{ width: '30px', height: '30px' }}
                         className="table_icon"
-                        onClick={() => props.playTrack(listSong)}
+                        onClick={() => this.props.playTrack(listSong)}
                       />
                     )}
                   </TableCell>
@@ -76,25 +105,24 @@ export const Liked = props => (
                     scope="row"
                     classes={{
                       root:
-                        props.selectedTrack.id === listSong.id
+                        this.props.selectedTrack.id === listSong.id
                           ? 'table_cell_active'
                           : 'table_cell',
                     }}
                   >
-                    {console.log(props.selectedTrack.id === listSong.id)}
                     {listSong.title}
                   </TableCell>
                   <TableCell
                     classes={{
                       root:
-                        props.selectedTrack.id === listSong.id
+                        this.props.selectedTrack.id === listSong.id
                           ? 'table_cell_active'
                           : 'table_cell',
                     }}
                   >
                     <span className="liked_underline">{listSong.artist}</span>
                     {listSong.feat.map(ft => (
-                      <span>
+                      <span key={ft}>
                         ,&nbsp;<span className="liked_underline">{ft}</span>
                       </span>
                     ))}
@@ -102,7 +130,7 @@ export const Liked = props => (
                   <TableCell
                     classes={{
                       root:
-                        props.selectedTrack.id === listSong.id
+                        this.props.selectedTrack.id === listSong.id
                           ? 'table_cell_active'
                           : 'table_cell',
                     }}
@@ -112,34 +140,34 @@ export const Liked = props => (
                   <TableCell
                     classes={{
                       root:
-                        props.selectedTrack.id === listSong.id
+                        this.props.selectedTrack.id === listSong.id
                           ? 'table_cell_active'
                           : 'table_cell',
                     }}
                   >
-                    {song.date}
+                    {listSong.date}
                   </TableCell>
                   <TableCell
                     classes={{
                       root:
-                        props.selectedTrack.id === listSong.id
+                        this.props.selectedTrack.id === listSong.id
                           ? 'table_cell_active'
                           : 'table_cell',
                     }}
                   >
-                    {props.formatTime(listSong.length)}
+                    {this.props.formatTime(listSong.length)}
                   </TableCell>
                   <TableCell classes={{ root: 'table_cell' }}>
                     <FavoriteIcon style={{ color: '#fff' }} />
                   </TableCell>
                 </TableRow>
-              ) : null
-            )
-          )}
-        </TableBody>
-      </Table>
-    </PerfectScrollbar>
-  </div>
-);
+              ))}
+            </TableBody>
+          </Table>
+        </PerfectScrollbar>
+      </div>
+    );
+  }
+}
 
 export default Liked;

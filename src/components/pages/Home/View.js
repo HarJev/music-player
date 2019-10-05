@@ -2,6 +2,7 @@ import React from 'react';
 import KeyboardArrowLeftIcon from '@material-ui/icons/KeyboardArrowLeft';
 import KeyboardArrowRightIcon from '@material-ui/icons/KeyboardArrowRight';
 import PlayCircleOutlineIcon from '@material-ui/icons/PlayCircleOutline';
+import PauseCircleOutlineIcon from '@material-ui/icons/PauseCircleOutline';
 
 import './style.css';
 
@@ -34,8 +35,25 @@ export const Home = props => (
                 alt={song.title}
                 className="recentlyPlayed_art"
               />
-              <div className="recentlyPlayed_play">
-                <PlayCircleOutlineIcon className="c_PausePlayIcon" />
+              <div
+                className="recentlyPlayed_play"
+                style={
+                  props.selectedTrack.id === song.id
+                    ? { visibility: 'visible' }
+                    : null
+                }
+              >
+                {props.selectedTrack.id === song.id && props.playing ? (
+                  <PauseCircleOutlineIcon
+                    className="c_PausePlayIcon"
+                    onClick={() => props.playTrack(song)}
+                  />
+                ) : (
+                  <PlayCircleOutlineIcon
+                    className="c_PausePlayIcon"
+                    onClick={() => props.playTrack(song)}
+                  />
+                )}
               </div>
             </div>
             <div className="recentlyPlayed_title">{song.title}</div>

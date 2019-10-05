@@ -9,6 +9,8 @@ export class Container extends Component {
           {...this.props}
           formatTime={this.props.formatTime}
           playerRef={this.props.playerRef}
+          handlePlayPause={this.props.handlePlayPause}
+          handleSkip={this.props.handleSkip}
         />
       </div>
     );

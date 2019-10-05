@@ -8,6 +8,8 @@ export class Container extends Component {
         {...this.props}
         formatTime={this.props.formatTime}
         playTrack={this.props.playTrack}
+        pushToPlaylist={this.props.pushToPlaylist}
+        likedSongs={this.props.likedSongs}
       />
     );
   }
