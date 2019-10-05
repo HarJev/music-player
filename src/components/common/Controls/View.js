@@ -8,6 +8,8 @@ import SkipPreviousIcon from '@material-ui/icons/SkipPrevious';
 import ShuffleIcon from '@material-ui/icons/Shuffle';
 import LoopIcon from '@material-ui/icons/Loop';
 import VolumeUpIcon from '@material-ui/icons/VolumeUp';
+import VolumeDownIcon from '@material-ui/icons/VolumeDown';
+import VolumeOffIcon from '@material-ui/icons/VolumeOff';
 import DevicesIcon from '@material-ui/icons/Devices';
 import PlaylistPlayIcon from '@material-ui/icons/PlaylistPlay';
 
@@ -101,7 +103,13 @@ export const ControlsView = props => (
           </div>
           <div className="c_volumeControl" style={{ marginRight: '22px' }}>
             <div className="c_otherIcon">
-              <VolumeUpIcon className="c_otherIcon" />
+              {props.volume >= 50 ? (
+                <VolumeUpIcon className="c_otherIcon" />
+              ) : props.volume > 0 ? (
+                <VolumeDownIcon className="c_otherIcon" />
+              ) : (
+                <VolumeOffIcon className="c_otherIcon" />
+              )}
             </div>
             <Slider
               value={props.volume}
