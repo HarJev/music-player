@@ -11,6 +11,7 @@ export class Container extends Component {
           playerRef={this.props.playerRef}
           handlePlayPause={this.props.handlePlayPause}
           handleSkip={this.props.handleSkip}
+          handleVolumeChange={this.props.handleVolumeChange}
         />
       </div>
     );

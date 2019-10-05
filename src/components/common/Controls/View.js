@@ -1,4 +1,5 @@
 import React from 'react';
+import Slider from '@material-ui/core/Slider';
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import PlayCircleOutlineIcon from '@material-ui/icons/PlayCircleOutline';
 import PauseCircleOutlineIcon from '@material-ui/icons/PauseCircleOutline';
@@ -101,9 +102,17 @@ export const ControlsView = props => (
             <div className="c_otherIcon">
               <VolumeUpIcon className="c_otherIcon" />
             </div>
-            <div className="c_volumeBar">
-              <div className="c_volumeBar_level" />
-            </div>
+            <Slider
+              value={props.volume}
+              onChange={props.handleVolumeChange}
+              // className="c_volumeBar"
+              classes={{
+                root: 'c_volume',
+                rail: 'c_volumeBar',
+                track: 'c_volumeBar_filled',
+                thumb: 'c_volumeBar_thumb',
+              }}
+            />
           </div>
           <div className="c_otherIcon">
             <PlaylistPlayIcon className="c_otherIcon" />

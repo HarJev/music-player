@@ -164,9 +164,33 @@
   width: 142px;
 }
 
+.c_volume {
+  width: 102px !important;
+}
 .c_volumeBar {
-  width: 102px;
-  height: 4px;
-  background-color: #b3b3b3;
-  border-radius: 2px;
+  height: 4px !important;
+  background-color: #686868 !important;
+  border-radius: 2px !important;
+}
+
+.c_volume:hover .c_volumeBar_thumb {
+  visibility: visible;
+}
+
+.c_volumeBar_filled {
+  height: 4px !important;
+  background-color: #b3b3b3 !important;
+  border-radius: 2px !important;
+}
+
+.c_volumeBar_thumb {
+  visibility: hidden;
+  background-color: #b3b3b3 !important;
+}
+
+.c_volumeBar_thumb.MuiSlider-active {
+  box-shadow: 0px 0px 0px 8px rgba(179, 179, 179, 0.16) !important;
+}
+.c_volumeBar_thumb:hover {
+  box-shadow: 0px 0px 0px 8px rgba(179, 179, 179, 0.16) !important;
 }

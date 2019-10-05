@@ -30,6 +30,7 @@ class App extends React.Component {
     currentTime: 0,
     currentTimePercentage: 0,
     currentPlaylist: [],
+    volume: 100,
   };
 
   componentDidMount() {
@@ -181,6 +182,11 @@ class App extends React.Component {
     }
   };
 
+  handleVolumeChange = (event, volume) => {
+    this.playerRef.volume = volume / 100;
+    this.setState({ volume: volume });
+  };
+
   render() {
     return (
       <div className="App">
@@ -220,6 +226,7 @@ class App extends React.Component {
             formatTime={this.formatTime}
             handlePlayPause={this.handlePlayPause}
             handleSkip={this.handleSkip}
+            handleVolumeChange={this.handleVolumeChange}
           />
         </div>
         <audio ref={ref => (this.playerRef = ref)} />
