@@ -91,26 +91,30 @@ class App extends React.Component {
       });
     }
     if (direction === 'previous') {
-      const currentTrackIndex = this.state.currentPlaylist.findIndex(
-        song => song.id === this.state.selectedTrack.id
-      );
-      console.log('currentTrackIndex', currentTrackIndex);
-      let previousTrackIndex;
-      if (currentTrackIndex === 0) {
-        previousTrackIndex = 0;
+      if (this.state.currentTime > 5) {
+        this.playerRef.currentTime = 0;
       } else {
-        previousTrackIndex = currentTrackIndex - 1;
+        const currentTrackIndex = this.state.currentPlaylist.findIndex(
+          song => song.id === this.state.selectedTrack.id
+        );
+        console.log('currentTrackIndex', currentTrackIndex);
+        let previousTrackIndex;
+        if (currentTrackIndex === 0) {
+          previousTrackIndex = 0;
+        } else {
+          previousTrackIndex = currentTrackIndex - 1;
+        }
+        console.log('previousTrackIndex', previousTrackIndex);
+        console.log(
+          'this.state.currentPlaylist',
+          this.state.currentPlaylist[previousTrackIndex]
+        );
+        this.playerRef.src = require(`assets/music/${this.state.currentPlaylist[previousTrackIndex].track}`);
+        this.playerRef.play();
+        this.setState({
+          selectedTrack: this.state.currentPlaylist[previousTrackIndex],
+        });
       }
-      console.log('previousTrackIndex', previousTrackIndex);
-      console.log(
-        'this.state.currentPlaylist',
-        this.state.currentPlaylist[previousTrackIndex]
-      );
-      this.playerRef.src = require(`assets/music/${this.state.currentPlaylist[previousTrackIndex].track}`);
-      this.playerRef.play();
-      this.setState({
-        selectedTrack: this.state.currentPlaylist[previousTrackIndex],
-      });
     }
   };
 
