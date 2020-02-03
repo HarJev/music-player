@@ -6,6 +6,7 @@ import { Route, Switch } from 'react-router-dom';
 import './style.css';
 import Home from '../../pages/Home/View';
 import { Liked } from 'components/pages/Liked';
+import { Radio } from 'components/pages/Radio';
 
 export const MainAppView = props => (
   <div className="ma_box">
@@ -31,6 +32,16 @@ export const MainAppView = props => (
           path="/liked"
           render={() => (
             <Liked
+              {...props}
+              playTrack={props.playTrack}
+              likedSongs={props.likedSongs}
+            />
+          )}
+        />
+        <Route
+          path="/radio"
+          render={() => (
+            <Radio
               {...props}
               playTrack={props.playTrack}
               likedSongs={props.likedSongs}
