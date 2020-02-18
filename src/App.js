@@ -8,6 +8,7 @@ import { Rightbar } from './components/common/RightBar';
 import { MainApp } from './components/common/MainApp';
 import UserDatabase from './assets/stubs/profile.json';
 import SongDatabase from './assets/stubs/songs.json';
+import RadioDatabase from './assets/stubs/radio.json';
 
 import './App.css';
 
@@ -15,6 +16,7 @@ class App extends React.Component {
   state = {
     user: { ...UserDatabase },
     music: { ...SongDatabase },
+    radio: { ...RadioDatabase },
     activePage: 'home',
     selectedTrack: {
       id: '0',
@@ -44,7 +46,7 @@ class App extends React.Component {
         (e.target.currentTime / this.state.selectedTrack.length) * 100 >=
         100
       ) {
-        if (this.state.currentPlaylist.length >= 1) {
+        if (this.state.currentPlaylist.length >= 1 && !this.state.selectedTrack.radio) {
           this.handleSkip('next');
         }
       }
@@ -52,11 +54,11 @@ class App extends React.Component {
   }
 
   componentWillUnmount() {
-    this.playerRef.removeEventListener('timeupdate', () => {});
+    this.playerRef.removeEventListener('timeupdate', () => { });
   }
 
   pushToPlaylist = list => {
-    if (this.state.currentPlaylist === list) {
+    if (this.state.currentPlaylist === list || this.state.playing) {
       return;
     }
     this.setState(
@@ -68,6 +70,9 @@ class App extends React.Component {
   };
 
   handleSkip = direction => {
+    if (this.state.selectedTrack.radio) {
+      return;
+    }
     if (direction === 'next') {
       const currentTrackIndex = this.state.currentPlaylist.findIndex(
         song => song.id === this.state.selectedTrack.id
@@ -146,6 +151,20 @@ class App extends React.Component {
       return;
     }
 
+    if (this.state.selectedTrack.radio) {
+      if (this.state.playing) {
+        this.playerRef.pause();
+        this.setState({ playing: false });
+        return;
+      }
+      else {
+        this.playerRef.src = this.state.selectedTrack.track;
+        this.playerRef.play();
+        this.setState({ playing: true });
+        return;
+      }
+    }
+
     this.setState({ playing: !this.state.playing }, () => {
       if (this.state.playing) {
         this.playerRef.play();
@@ -156,6 +175,20 @@ class App extends React.Component {
   };
 
   playTrack = song => {
+    if (song.radio) {
+      if (this.state.playing) {
+        this.playerRef.pause();
+        this.setState({ playing: false });
+        return;
+      }
+      else {
+        this.playerRef.src = song.track;
+        this.playerRef.play();
+        this.setState({ playing: true });
+        this.setState({ selectedTrack: { ...song } });
+        return;
+      }
+    }
     if (
       this.state.playing === false &&
       this.state.selectedTrack.id !== song.id

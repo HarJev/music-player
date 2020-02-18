@@ -26,7 +26,7 @@ export const SidebarView = props => (
           </div>
           <div className="sb_circle_navs_text">Browse</div>
         </div>
-        <div className="sb_circle_navs_item">
+        <div className="sb_circle_navs_item" onClick={() => props.handlePageChange('radio')}>
           <div className="sb_circle_navs_circle">
             <RadioOutlinedIcon />
           </div>

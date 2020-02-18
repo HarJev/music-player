@@ -1,0 +1,22 @@
+{
+    "stations": [
+        {
+            "id": "r1",
+            "title": "Zip 103 FM",
+            "artist": "",
+            "feat": [],
+            "albumArt": "zip103fm.jpg",
+            "length": 0,
+            "track": "http://ec2-52-205-111-133.compute-1.amazonaws.com:9448/mount.mp3"
+        },
+        {
+            "id": "r2",
+            "title": "Fyah 105 FM",
+            "artist": "",
+            "feat": [],
+            "albumArt": "fyah105fm.png",
+            "length": 0,
+            "track": "http://live.str3am.com:9210/live"
+        }
+    ]
+}
